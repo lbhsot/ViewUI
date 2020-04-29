@@ -46,7 +46,7 @@
                 if (isServer) return;
                 if (this.popper) {
                     this.$nextTick(() => {
-                        this.popper.update();
+                        // this.popper.update();
                         this.popperStatus = true;
                     });
                 } else {
