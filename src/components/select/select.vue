@@ -547,6 +547,7 @@
                 this.visible = typeof force !== 'undefined' ? force : !this.visible;
                 if (this.visible){
                     this.dropDownWidth = this.$el.getBoundingClientRect().width;
+                    console.log('-----> ', 'select.vue toogleMenu');
                     this.broadcast('Drop', 'on-update-popper');
                 }
             },
@@ -700,6 +701,7 @@
                     if (!this.autoComplete) this.$nextTick(() => inputField.focus());
                 }
                 this.$emit('on-select', option); // # 4441
+                console.log('-----> ', 'select.vue onOptionClick');
                 this.broadcast('Drop', 'on-update-popper');
                 setTimeout(() => {
                     this.filterQueryChange = false;
@@ -842,6 +844,7 @@
                 }
             },
             dropVisible(open){
+                console.log('-----> ', 'select.vue dropVisible', open);
                 this.broadcast('Drop', open ? 'on-update-popper' : 'on-destroy-popper');
             },
             selectOptions(){
@@ -859,6 +862,7 @@
 
                  // 当 dropdown 一开始在控件下部显示，而滚动页面后变成在上部显示，如果选项列表的长度由内部动态变更了(搜索情况)
                  // dropdown 的位置不会重新计算，需要重新计算
+                console.log('-----> ', 'select.vue selectOptions');
                 this.broadcast('Drop', 'on-update-popper');
             },
             visible(state){
@@ -877,6 +881,7 @@
                 // 当 dropdown 在控件上部显示时，如果选项列表的长度由外部动态变更了，
                 // dropdown 的位置会有点问题，需要重新计算
                 if (options && old && options.length !== old.length) {
+                    console.log('-----> ', 'select.vue slotOptions');
                     this.broadcast('Drop', 'on-update-popper');
                 }
             },

@@ -106,6 +106,7 @@
             },
         },
         created () {
+            console.log('-----> ', 'Select/Dropdown.vue created')
             this.$on('on-update-popper', this.update);
             this.$on('on-destroy-popper', this.destroy);
         },

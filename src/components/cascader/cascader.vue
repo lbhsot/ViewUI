@@ -409,6 +409,7 @@
                     if (this.transfer) {
                         this.$refs.drop.update();
                     }
+                    console.log('-----> ', 'cascader.vue visible');
                     this.broadcast('Drop', 'on-update-popper');
                 } else {
                     if (this.filterable) {
